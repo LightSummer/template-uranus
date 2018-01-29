@@ -1,0 +1,89 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head> 
+    <stl:include file="@/include/header.html"></stl:include> 
+    <link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/static/js/slick/slick.css">
+</head>
+
+<body>
+    <stl:include file="@/include/nav.html"></stl:include> 
+
+<div class="container store-search">
+  <div class="row">
+    <div class="col-md-4 col-sm-5 fore1">
+      <h1 class="h5 mt0">查询店面</h1>
+      <p>请选择您所在的省份或城市，查询您附近的实体店面。</p>
+      <form role="form" class="form-city" action="." mechod="GET" id="searchStoreForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1">选择省份</label>
+          <select id="selProvice" class="province" onchange="choices_city(this.value)" name='province'> 
+            <option value="{Channel.NavigationUrl_线下店面}">请选择</option>
+            <stl:channels topLevel="2">
+                <stl:if type="UpChannelOrSelf">
+                    <stl:yes>
+                        <option class="storeSelect" selected="selected" value="{Channel.NavigationUrl}">{Channel.Title}</option>
+                    </stl:yes>
+                    <stl:no>
+                        <option class="storeSelect"  value="{Channel.NavigationUrl}">{Channel.Title}</option>
+                    </stl:no>
+                </stl:if>
+            </stl:channels>  
+          </select>
+        </div> 
+        <div class="form-function"> 
+          <button type="button" class="btn btn-normal btn-xs"  onclick="choices_city($('#selProvice').val());" >查询</button>
+          <button type="button" class="btn btn-normal btn-xs" onclick="search_all();">全部店面</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-8 col-sm-7 fore2">
+      
+      <ul class="store-rearch-results-lists" style="max-width: 100%;">
+        <stl:contents scope="SelfAndChildren">
+            <li class="active"> <span style="font-size: 14px;">{Content.Title}：</span><br>
+                <span style="font-size: 12px;">{Content.SubTitle}</span><br>
+                <span style="font-size: 12px;">TEL: </span><span style="font-size: 12px;" onclick="call('{Content.Author}')">{Content.Author}</span> <a href="{Content.LinkUrl}" class="view-map" target='_blank'><span style="font-size: 12px;">查看地图</span></a>
+            </li>
+        </stl:contents>  
+      </ul>
+      
+    </div>
+  </div>
+</div> 
+
+<stl:include file="@/include/footer.html"></stl:include>
+
+<!-- backTop -->
+<div class="visible-xs">
+  <div id="backTop">
+    <div class="container"><a href="javascript:void(0)" class="top">Top</a></div>
+  </div>
+</div>
+<!-- /backTop -->
+
+<!-- exhibition  -->
+<!-- /.exhibition -->  
+<script src="{Stl.SiteUrl}/static/js/backtop.js"></script>
+<script type="text/javascript">
+function choices_city(province_id) {  
+    window.location.href = province_id; 
+}
+function search_all(){
+    window.location.href = "{Channel.NavigationUrl_线下店面}";
+}
+function call(phoneNum) {
+  try {
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+      window.location.href = "tel:"+phoneNum;
+    } else {
+
+    }
+  } catch (e) {
+  }
+}
+</script>
+
+</body>
+</html>

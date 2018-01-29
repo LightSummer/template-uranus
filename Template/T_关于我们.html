@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <stl:include file="@/include/header.html"></stl:include> 
+</head> 
+<body>
+    <stl:include file="@/include/nav.html"></stl:include> 
+
+    <article>
+        <div class="container static-page company-introduction">
+            <div class="row sm-row">
+                <div class="col-md-12"> 
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane active" role="tabpanel">
+                            <div class="row sm-row">
+                                <div class="col-sm-6 col-sm-push-6"> 
+                                    <div class="img-lovely">
+                                        <img src="{Channel.ImageUrl}" class="img-responsive">
+                                    </div> 
+                                </div>
+                                <div class="col-sm-6 col-sm-pull-6">
+                                    {Channel.Content}
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <stl:include file="@/include/footer.html"></stl:include>    
+</body>
+</html>

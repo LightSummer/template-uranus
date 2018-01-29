@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <stl:include file="@/include/header.html"></stl:include> 
+</head> 
+<body> 
+    <stl:include file="@/include/nav.html"></stl:include> 
+  
+  <div class="container">
+    <!-- main banner --> 
+      <div class="main-banner"> 
+          <img src="{Channel.ImageUrl}" class="img-responsive"> 
+      </div> 
+    <!-- /.main banner -->
+  </div>
+  <!-- /.container -->
+  <!-- exhibition  -->
+  <div class="scene-lists">
+    <div class="container">
+      <div class="row">
+          <stl:contents>
+                <div class="col-sm-6">
+                    <stl:a> 
+                        <img src="{Content.ImageUrl}" class="img-responsive"> 
+                    </stl:a>
+                </div>
+          </stl:contents> 
+          
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-12">
+      </div>
+    </div>
+  </div>
+  
+<stl:include file="@/include/footer.html"></stl:include>  
+<script src="{Stl.SiteUrl}/js/backtop.js"></script> 
+</body>
+</html>

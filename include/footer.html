@@ -1,0 +1,91 @@
+<div class="mf-footer">
+    <div class="container">
+        <div class="row">
+            <stl:channels topLevel="0" totalNum="3" groupChannel="底部导航">
+                <div class="col-sm-3 fore{Channel.ItemIndex}">
+                    <dl>
+                        <dt>{Channel.Title}</dt>
+                        <stl:channels>
+                            <dd><stl:a></stl:a></dd>
+                        </stl:channels> 
+                    </dl>
+                </div>
+            </stl:channels> 
+            <div class="col-sm-3 fore4">
+              <dl>
+                <dt>了解更多</dt>
+                <dd class="mf-tel"><span class="glyphicon glyphicon-earphone"></span><span onClick="call_base('{Stl.hotline}')"> {Stl.hotline}</span></dd>
+                <dd class="mf-tel"><span onClick="call_base('{Stl.Tel}')"> {Stl.Tel}</span></dd>
+                <dd class="mf-tel"><span class="glyphicon glyphicon-email"></span><span><a href='mailto:{Stl.Email}'>{Stl.Email}</a></span></dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div align="center">
+        <p style="font-size: 12px !important;">{Stl.ICP}</p>
+      </div>
+      <!-- Modal -->
+      <div class="modal mf-modal1 fade" id="reservation-designer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+           aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true" class="iconfont icon-close"></span><span
+                      class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="myModalLabel">预约门店</h4>
+            </div>
+            <div class="modal-body">
+              <p class="text-center mb20" id="appointment-form-msg">请您留下姓名和电话，我们的客服人员会尽快和您联系并为您预约附近的门店。</p>
+              <stl:input inputName="预约门店">
+<table cellSpacing="3" cellPadding="3" border="0" width="98%">
+  <tr>
+    <td style="padding: 5px; width: 80px;">姓名:</td>
+    <td style="padding: 5px;"><input id="name" name="name" type="text" class="input_text" value="" class="is_text" style="width:380px;" isValidate="true" displayName="姓名" isRequire="true" minNum="0" maxNum="0" validateType="None" regExp="" errorMessage="请输入姓名" />
+      &nbsp;<span id="name_msg" style="color:red;display:none;">*</span><script>event_observe('name', 'blur', checkAttributeValue);</script></td>
+  </tr>
+  <tr>
+    <td style="padding: 5px; width: 80px;">手机:</td>
+    <td style="padding: 5px;"><input id="iPhone" name="iPhone" type="text" class="input_text" value="" class="is_text" style="width:380px;" isValidate="true" displayName="手机" isRequire="true" minNum="0" maxNum="0" validateType="Mobile" regExp="" errorMessage="请输入正确的手机号码" />
+      &nbsp;<span id="iPhone_msg" style="color:red;display:none;">*</span><script>event_observe('iPhone', 'blur', checkAttributeValue);</script></td>
+  </tr>
+  <tr>
+    <td style="padding: 5px; width: 80px;">备注:</td>
+    <td style="padding: 5px;"><textarea id="beizhu" name="beizhu" class="textarea" class="is_textarea" style="width:380px;height:80px;" >
+      </textarea></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding: 5px; text-align: center;"><input id="submit" type="button" class="is_btn" value=" 提 交 " />
+      &nbsp;&nbsp;&nbsp;
+      <input type="reset" class="is_btn" value=" 重 置 " /></td>
+  </tr>
+</table>
+</stl:input>
+              <!--<div class="appointment-form-msg"></div>-->
+            </div>
+            <div class="modal-footer hidden">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.footer --> 
+    <!-- exhibition  -->
+    <!-- /.exhibition -->
+    <!-- Bootstrap core JavaScript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{Stl.SiteUrl}/js/jquery-1.11.0.min.js"></script>
+    <script src="{Stl.SiteUrl}/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{Stl.SiteUrl}/js/ie10-viewport-bug-workaround.js"></script>
+    <!-- main menu -->
+    <script type='text/javascript' src='{Stl.SiteUrl}/js/jquery.hoverintent.minified.js'></script>
+    <script src='{Stl.SiteUrl}/js/modernizr.custom.61586.js'></script>
+    <script type='text/javascript' src='{Stl.SiteUrl}/js/jquery.dcmegamenu.1.2.js'></script>
+    <script type='text/javascript' src='{Stl.SiteUrl}/js/jquery.lazyload.js'></script>
+    <script type='text/javascript' src='{Stl.SiteUrl}/js/base.js'></script>
+    <script src="{Stl.SiteUrl}/js/disabledownloadvideo.js"></script>
+    <script src="{Stl.SiteUrl}/js/jquery.touchwipe.js"></script>
+    <script src="{Stl.SiteUrl}/js/carousel-li-plugin.js"></script>
+    <script type="application/javascript" src="{Stl.SiteUrl}/js/img.js"></script>
+    

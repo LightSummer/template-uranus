@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <stl:include file="@/include/header.html"></stl:include> 
+</head> 
+<body>
+    <stl:include file="@/include/nav.html"></stl:include> 
+
+ <div class="scene-lists">
+    <div class="container">
+      <div class="row">
+		 <h4 class="biaoti "><stl:channel type="Title" topLevel="2"  class="img-responsive"></stl:channel></h4>
+         <div class="col-sm-7">
+			 <div class="row tab-content"> 
+				<div class="tab-pane active " id="all">
+					 <ul class="unstyled" >
+					  <stl:pageContents pageNum="10" scope="SelfAndChildren"> 
+                          <li><stl:a target="_blank"><stl:content wordNum="35"></stl:content></stl:a><p class="text-right">[&nbsp;<stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content>&nbsp;]</p></li>
+					  </stl:pageContents> 
+					</ul>
+					<div class="span5 btbg"> <img src="{Stl.SiteUrl}/images/btbg.jpg"></div>
+				   <ul class="pagination mf-page">
+                        <stl:pageItem type="PreviousPage">
+                            <stl:yes>
+                                <li> 
+                                    <span><a href="{Current.Url}">&lt; 上一页</a> </span> 
+                                </li>
+                            </stl:yes>
+                            <stl:no>
+                                <li class="disabled"> 
+                                    <span>&lt; 上一页 </span> 
+                                </li>
+                            </stl:no>
+                        </stl:pageItem>
+                        <stl:pageItem type="PageNavigation" listNum="5">
+                            <stl:yes>
+                                <li><a href="{Current.Url}"><span>{Current.Num}</span></a></li> 
+                            </stl:yes>
+                            <stl:no>
+                                <li class="active"><span>{Current.Num}</span></li> 
+                            </stl:no>
+                        </stl:pageItem> 
+						<stl:pageItem type="NextPage">
+                            <stl:yes> 
+                                <li> 
+                                    <span><a href="{Current.Url}">下一页 &gt;</a></span> 
+                                </li>
+                            </stl:yes>
+                            <stl:no>
+                                <li class="disabled"> 
+                                    <span> 下一页 &gt;</span> 
+                                </li>
+                            </stl:no>
+                        </stl:pageItem>
+						
+					  </ul>
+				</div>  
+			 </div>
+		 </div>
+		 <input type="hidden"  id ="newstype" value='all' />
+		 <div class="col-sm-4 right_img">
+			<p>&nbsp;</p>
+			<stl:channel type="ImageUrl" topLevel="2"  class="img-responsive"></stl:channel>
+         </div>
+     </div>
+   </div>
+</div>
+
+<link rel="stylesheet" href="{Stl.SiteUrl}/css/news.css"/> 
+<stl:include file="@/include/footer.html"></stl:include> 
+
+</body>
+</html>

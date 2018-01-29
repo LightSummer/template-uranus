@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head> 
+    <stl:include file="@/include/header.html"></stl:include> 
+    <link rel="stylesheet" type="text/css" href="{Stl.SiteUrl}/css/slick.css">
+    <style type="text/css">
+        #more_info {
+            display: none;
+        }
+    </style>  
+</head>
+
+<body>
+    <stl:include file="@/include/nav.html"></stl:include>
+
+  <!-- detail  -->
+<input type="hidden" value="False" id="user-is-login">
+  <div class="container" id="mf-detail">
+    <div class="row">
+      <div class="col-md-8 col-sm-7">
+        <div class="detail-gallery">
+          <div class="main-image">
+            <div class="intrinsic-ratio-1-1">
+              <div class="element-to-stretch">
+                <div class="imitate-table">
+                  <div>
+                      <stl:each type="photo" totalNum="1">
+                          <stl:photo type="largeUrl" alt="Placeholder" class="custom img-responsive center-block"></stl:photo>  
+                      </stl:each> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ul class="thumbnails visible-xs">
+            
+              <stl:each type="photo">
+                  <stl:if testType="photo.ItemIndex" testOperate="Equals" value="1">  
+                    <stl:yes> 
+                      <li> 
+                      <a class="active" href="{photo.LargeUrl}">
+                          <span>
+                            <stl:photo type="SmallUrl" alt="Thumbnails" data-src=""></stl:photo>  
+                          </span>
+                        </a>  
+                    </li> 
+                    </stl:yes> 
+                    <stl:no>
+                  <li> 
+                      <a href="{photo.LargeUrl}">
+                          <span>
+                            <stl:photo type="SmallUrl" alt="Thumbnails" data-src=""></stl:photo>  
+                          </span>
+                        </a>  
+                    </li> 
+                  </stl:no>
+                    </stl:if>
+              </stl:each>  
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-5">
+        <div class="mf-detail-data">
+          <div class="mf-property">
+            <h1 class="main-title">{Content.Title}</h1>
+            
+              <ul class="meta">
+                
+                    
+                    <li ><span>品牌：</span><div id="pingpai"> {Content.Author} </div></li>
+                
+				  <script type="text/javascript">
+					
+							var pp =  $.trim($("#pingpai").html());
+						
+						
+						if(pp=='REHOME'){
+							$("#pingpai").html('Rehome');
+						}
+
+
+				  </script>
+                
+                  
+                
+                <li id="subtitle"><span>系列：</span>{Content.SubTitle}</li>
+                <script type="text/javascript"> 
+                  var subtitle =  "{Content.SubTitle}";  
+                  if(subtitle == null || subtitle == ''){ 
+                    $("#subtitle").css("display","none");
+                  }
+    
+    
+              </script>
+                <li><span>品号：</span>{Content.Source}</li>
+                
+                  <li><span>规格：</span>
+                    <div class="specifications-select-wrap">
+                      <select class="selectpicker" data-width="auto">
+                        
+                          <option><stl:content type="guige"></stl:content></option>
+                        
+                      </select>
+                    </div>
+                  </li>
+                
+                
+                
+                <li><span>主材：</span><stl:content type="zhucai"></stl:content></li>
+                
+              </ul>
+              <a href="javascript:void(0)" class="text-prominent" onclick="show_more_info()">更多商品信息</a><br/>
+              <div id="more_info" class="more-info">
+                  {Content.Content}
+              </div>
+
+				
+				<div class="key" style=" border-bottom: 1px solid #c2c2c2;solid #c2c2c2;margin: 10px 0;padding-top: 0px;">
+				
+              <div class="detail-gallery">
+                <ul class="thumbnails hidden-xs"> 
+                    <stl:each type="photo">
+                  <stl:if testType="photo.ItemIndex" testOperate="Equals" value="1">  
+                    <stl:yes> 
+                      <li> 
+                      <a class="active" href="{photo.LargeUrl}">
+                          <span>
+                            <stl:photo type="SmallUrl" alt="Thumbnails" data-src=""></stl:photo>  
+                          </span>
+                        </a>  
+                    </li> 
+                    </stl:yes> 
+                    <stl:no>
+                  <li> 
+                      <a href="{photo.LargeUrl}">
+                          <span>
+                            <stl:photo type="SmallUrl" alt="Thumbnails" data-src=""></stl:photo>  
+                          </span>
+                        </a>  
+                    </li> 
+                  </stl:no>
+                    </stl:if>
+              </stl:each>  
+                  
+                </ul>
+                <p>了解本品真实触感，查看更多场景搭配，敬请莅临实体店面体验专业的服务。</p> 
+              </div> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /detail  -->  
+<!-- /.exhibition -->
+<stl:include file="@/include/footer.html"></stl:include>  
+<!-- exhibition  -->
+<!-- /.exhibition --> 
+
+  <script src="{Stl.SiteUrl}/js/jquery.simplegal.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.thumbnails').simpleGal({
+        mainImage: '.custom'
+      });
+    });
+  </script>
+  <!--recommend slider-->
+  <script type="text/javascript" src="{Stl.SiteUrl}/js/slick.js"></script>
+  <script type="text/javascript">
+    $('.recommend-slider').slick({
+      dots: false,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      responsive: [
+        {
+          breakpoint: 998,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  </script>
+  <!-- bootstrap select -->
+  <script src="{Stl.SiteUrl}/js/bootstrap-select.js"></script>
+  <script type="text/javascript">
+    $('.selectpicker').selectpicker({
+      style: 'btn-default btn-xs',
+      size: 4
+    });
+  </script>
+  <script type="text/javascript">
+    function show_qr_code_detail(product_upc) {
+      _hmt.push(['_trackEvent', 'weixin', 'click', 'product-detail-'+product_upc]);
+      if($("#qr_code_detail").is(":hidden")) {
+        $('#qr_code_detail').show();
+      }
+      else{
+        $('#qr_code_detail').hide()
+      }
+    }
+
+    function show_more_info() {
+      if($("#more_info").is(":hidden")) {
+        $('#more_info').show();
+      }
+      else{
+        $('#more_info').hide();
+      }
+    }     
+  </script>
+
+</body>
+</html>

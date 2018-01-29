@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <stl:include file="@/include/header.html"></stl:include> 
+</head> 
+<body> 
+    <stl:include file="@/include/nav.html"></stl:include> 
+
+<div class="container"> 
+ <!-- main header -->
+ 
+  <h1 class="main-heading">{Channel.Title}</h1>
+ 
+ <!-- /.main header --> 
+</div>
+  
+<!-- /.container --> 
+<!-- product lists  -->  
+<div class="container mk-product-lists">
+  <div class="row">
+    <stl:pageContents pageNum="16" scope="SelfAndChildren"> 
+      <div class="col-md-3 col-sm-4 col-xs-6">
+        <div class="thumbnail">
+          <stl:a target="_blank">
+              <div class="pic">
+                  <img class="img-responsive lazy" data-src="" data-original="{Content.ImageUrl}" />
+            </div>
+          </stl:a>
+          <div class="caption">
+           <h3>{Content.Title}</h3>
+            <p>{Content.Source}</p>  
+          </div>
+        </div>
+      </div>
+    </stl:pageContents> 
+  </div>
+</div>
+<div class="container">
+ <div class="row">
+  <div class="col-md-12">
+   
+
+
+  <ul class="pagination mf-page">
+
+        <stl:pageItem type="PreviousPage">
+            <stl:yes>
+                <li> 
+                    <span><a href="{Current.Url}">&lt; 上一页</a> </span> 
+                </li>
+            </stl:yes>
+            <stl:no>
+                <li class="disabled"> 
+                    <span>&lt; 上一页 </span> 
+                </li>
+            </stl:no>
+        </stl:pageItem>
+        <stl:pageItem type="PageNavigation" listNum="5">
+            <stl:yes>
+                <li><a href="{Current.Url}"><span>{Current.Num}</span></a></li> 
+            </stl:yes>
+            <stl:no>
+                <li class="active"><span>{Current.Num}</span></li> 
+            </stl:no>
+        </stl:pageItem> 
+        <stl:pageItem type="NextPage">
+            <stl:yes> 
+                <li> 
+                    <span><a href="{Current.Url}">下一页 &gt;</a></span> 
+                </li>
+            </stl:yes>
+            <stl:no>
+                <li class="disabled"> 
+                    <span> 下一页 &gt;</span> 
+                </li>
+            </stl:no>
+        </stl:pageItem> 
+  </ul>
+
+
+  </div>
+ </div>
+</div>
+
+<stl:include file="@/include/footer.html"></stl:include>    
+
+</body>
+</html>

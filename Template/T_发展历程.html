@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <stl:include file="@/include/header.html"></stl:include>  
+</head> 
+<body>
+    <stl:include file="@/include/nav.html"></stl:include>   
+
+  <div class="container static-page brand-story">
+    <div class="row">
+      <div class="col-md-12"> 
+        <div class="tab-content">
+          <div id="home" class="tab-pane active" role="tabpanel">
+            <div class="brand-story-lists">
+              <div class="item"> 
+              <stl:contents totalNum="2" startNum="1">
+                <div class="media"><span class="media-left" href="#">{Content.Title}</span>
+                  <div class="media-body">
+                    <h4 class="media-heading">{Content.SubTitle}</h4>
+                    <p><p><span style="color: #a5a5a5; font-family: 'Microsoft YaHei', 'STHeiti Light', SimSun; line-height: 19px;">{Content.Summary}</span></p></p>
+                  </div>
+                </div> 
+              </stl:contents>
+              </div>
+              <stl:if type="CountOfContents" operate="GreatThan" value="2">
+                <stl:yes>
+                <div class="item">
+                    <stl:contents totalNum="2" startNum="3">
+                        <div class="media"><span class="media-left" href="#">{Content.Title}</span>
+                            <div class="media-body">
+                            <h4 class="media-heading">{Content.SubTitle}</h4>
+                            <p><p><span style="color: #a5a5a5; font-family: 'Microsoft YaHei', 'STHeiti Light', SimSun; line-height: 19px;">{Content.Summary}</span></p></p>
+                            </div>
+                        </div> 
+                    </stl:contents>
+                </div>
+                </stl:yes>
+              </stl:if>
+            
+              <stl:if type="CountOfContents" operate="GreatThan" value="4">
+                    <stl:yes>
+                    <div class="item">
+                        <stl:contents totalNum="2" startNum="5">
+                            <div class="media"><span class="media-left" href="#">{Content.Title}</span>
+                                <div class="media-body">
+                                <h4 class="media-heading">{Content.SubTitle}</h4>
+                                <p><p><span style="color: #a5a5a5; font-family: 'Microsoft YaHei', 'STHeiti Light', SimSun; line-height: 19px;">{Content.Summary}</span></p></p>
+                                </div>
+                            </div> 
+                        </stl:contents>
+                    </div>
+                    </stl:yes>
+                  </stl:if>
+            
+                  <stl:if type="CountOfContents" operate="GreatThan" value="6">
+                        <stl:yes>
+                        <div class="item">
+                            <stl:contents totalNum="2" startNum="7">
+                                <div class="media"><span class="media-left" href="#">{Content.Title}</span>
+                                    <div class="media-body">
+                                    <h4 class="media-heading">{Content.SubTitle}</h4>
+                                    <p><p><span style="color: #a5a5a5; font-family: 'Microsoft YaHei', 'STHeiti Light', SimSun; line-height: 19px;">{Content.Summary}</span></p></p>
+                                    </div>
+                                </div> 
+                            </stl:contents>
+                        </div>
+                        </stl:yes>
+                      </stl:if>
+            
+                      <stl:if type="CountOfContents" operate="GreatThan" value="8">
+                            <stl:yes>
+                            <div class="item">
+                                <stl:contents totalNum="2" startNum="9">
+                                    <div class="media"><span class="media-left" href="#">{Content.Title}</span>
+                                        <div class="media-body">
+                                        <h4 class="media-heading">{Content.SubTitle}</h4>
+                                        <p><p><span style="color: #a5a5a5; font-family: 'Microsoft YaHei', 'STHeiti Light', SimSun; line-height: 19px;">{Content.Summary}</span></p></p>
+                                        </div>
+                                    </div> 
+                                </stl:contents>
+                            </div>
+                            </stl:yes>
+                          </stl:if>
+            
+                          <stl:if type="CountOfContents" operate="GreatThan" value="10">
+                                <stl:yes>
+                                <div class="item">
+                                    <stl:contents totalNum="2" startNum="11">
+                                        <div class="media"><span class="media-left" href="#">{Content.Title}</span>
+                                            <div class="media-body">
+                                            <h4 class="media-heading">{Content.SubTitle}</h4>
+                                            <p><p><span style="color: #a5a5a5; font-family: 'Microsoft YaHei', 'STHeiti Light', SimSun; line-height: 19px;">{Content.Summary}</span></p></p>
+                                            </div>
+                                        </div> 
+                                    </stl:contents>
+                                </div>
+                                </stl:yes>
+                              </stl:if>
+
+            </div>
+          </div>   
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- /.exhibition -->
+    <stl:include file="@/include/footer.html"></stl:include>
+</body>
+</html>

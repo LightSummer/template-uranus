@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head> 
+    <stl:include file="@/include/header.html"></stl:include> 
+</head> 
+<body>
+    <stl:include file="@/include/nav.html"></stl:include>
+<!-- exhibition  -->
+
+<div class="container"> 
+	<!---->
+  <!-- Carousel
+        ================================================== -->
+  
+  <div id="hero-gallery" class="carousel slide" data-ride="carousel"> 
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <stl:contents totalNum="4" channelIndex="首页焦点轮播图">
+            <li data-target="#hero-gallery" data-slide-to="{Content.ItemIndex-1}"></li>
+        </stl:contents>  
+    </ol>
+    <div class="carousel-inner">
+	
+    <stl:contents totalNum="4" channelIndex="首页焦点轮播图">
+        <stl:if type="ItemIndex" operate="Equals" value="1">
+            <stl:yes>
+                <div class="item active">
+                    <stl:a target="_blank"> 
+                        <img src="{Content.ImageUrl}"> 
+                    </stl:a>
+                </div>
+            </stl:yes>
+            <stl:no> 
+                <div class="item">
+                    <stl:a target="_blank"> 
+                        <img src="{Content.ImageUrl}"> 
+                    </stl:a>
+                </div>
+            </stl:no>
+        </stl:if> 
+    </stl:contents>    
+    </div>
+    <a class="left carousel-control" href="#hero-gallery" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left">&#xe601;</span>
+    </a>
+    <a class="right carousel-control" href="#hero-gallery" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right">&#xe600;</span>
+    </a>
+  </div>
+  
+  <!-- /.carousel --> 
+</div>
+
+<div class=" container sort-exhibition">
+    <div class="row">
+        <stl:contents totalNum="3" channelIndex="首页底部三张图片">
+            <div class="col-sm-4">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>{Content.Title}<small>{Content.SubTitle}</small></h3>
+                    </div>
+                    <span class="pic">
+                        <stl:a>
+                            <img src="{Content.ImageUrl}" alt="{Content.Title}"> 
+                        </stl:a> 
+                    </span>
+                </div>
+            </div> 
+        </stl:contents>
+    </div>
+</div>
+
+<!-- /.exhibition -->
+
+    <stl:include file="@/include/footer.html"></stl:include>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head>
+    <stl:include file="@/include/header.html"></stl:include>
+</head> 
+<body>
+    <stl:include file="@/include/nav.html"></stl:include>
+
+    <article>
+<div class="container">
+	<div class="row">
+ 	<div class="col-md-12">
+  	<img src="{Channel.ImageUrl}" class="img-responsive">
+  </div>
+ </div>
+ <stl:contents>
+    <stl:if type="OddItem">
+        <stl:yes>
+            <div class="row sm-row service-mod1">
+                <div class="col-md-4 col-sm-4">
+                    <div class="imitate-table summary">
+                        <div>
+                            <h2 class="h6 text-prominent">[{Content.Title}]</h2>
+                            <p>{Content.SubTitle}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <div class="uac-curtain describe">
+                        <img src="{Content.ImageUrl}" class="img-responsive visible-xs" >
+                        <div class="tro">
+                            {Content.Content}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </stl:yes>
+        <stl:no>
+            <div class="row sm-row service-mod1">
+                <div class="col-sm-4 col-sm-push-8">
+                        <div class="imitate-table summary summary-r">
+                        <div>
+                        <h2 class="h6 text-prominent">[{Content.Title}]</h2>
+                    <p>{Content.SubTitle}</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-8 col-sm-pull-4">
+                        <div class="uac-cutton describe">
+                    <img src="{Content.ImageUrl}" class="img-responsive visible-xs" >
+                        <div class="tro">
+                                {Content.Content}
+                    </div>
+                    </div>
+                    </div>
+                </div>
+        </stl:no>
+    </stl:if>
+ </stl:contents>  
+  
+</div>
+</article>
+    <stl:include file="@/include/footer.html"></stl:include>
+</body>
+</html>

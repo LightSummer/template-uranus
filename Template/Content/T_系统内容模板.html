@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:wb="http://open.weibo.com/wb">
+<head> 
+    <stl:include file="@/include/header.html"></stl:include> 
+</head> 
+<body>
+    <stl:include file="@/include/nav.html"></stl:include> 
+ <div class="scene-lists">
+    <div class="container">
+      <div class="row">
+			<h3 class="text-center">
+				{Content.Title}
+			</h3>
+            <p class="text-center "><small><stl:content type="AddDate" formatString="yyyy-MM-dd"></stl:content>&nbsp;&nbsp;&nbsp; {Content.Author}</small></p>
+				<span style="line-height:25px"> 
+                    {Content.Content}
+                </span>  
+		<div style="clear:both;"></div> 
+		<p class="text-left"><stl:navigation tipText="上一篇：" type="PreviousContent"></stl:navigation></p>   
+		<p class="text-left"><stl:navigation tipText="下一篇：" type="NextContent"></stl:navigation></p>
+		
+     </div>
+   </div>
+</div>
+
+<link rel="stylesheet" href="{Stl.SiteUrl}/css/news.css"/> 
+<stl:include file="@/include/footer.html"></stl:include> 
+</body>
+</html>
